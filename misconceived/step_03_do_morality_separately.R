@@ -93,7 +93,8 @@ m_full=m
 # average morval by pp, collapsing the different fables M_1 to M_6
 m=m %>% 
   group_by(pnum, page, psex, mval, 
-           stim_attr, stim_sex, stim_num, stim_id_full, stim_id, stim_factor) %>%
+           stim_attr, stim_sex, stim_num, 
+           stim_id_full, stim_id, stim_factor) %>%
   summarise(mean_morality_rating = mean(morval), 
             .groups="drop_last") %>% 
   ungroup()
